@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+      <TotalCoin_Standard>
+        <version>1.0.0</version>
+      </TotalCoin_Standard>
+    </modules>
+
+    <global>
+        <models>
+            <totalcoin_standard>
+                <class>TotalCoin_Standard_Model</class>
+            </totalcoin_standard>
+        </models>
+        <blocks>
+            <totalcoin_standard>
+                <class>TotalCoin_Standard_Block</class>
+            </totalcoin_standard>
+        </blocks>
+        <helpers>
+            <totalcoin_standard>
+                <class>TotalCoin_Standard_Helper</class>
+            </totalcoin_standard>
+        </helpers>
+    </global>
+
+    <frontend>
+        <routers>
+            <totalcoin_standard>
+                <use>standard</use>
+                <args>
+                    <module>TotalCoin_Standard</module>
+                    <frontName>totalcoin_standard</frontName>
+                </args>
+            </totalcoin_standard>
+        </routers>
+    </frontend>
+
+    <default>
+      <payment>
+        <totalcoin_standard>
+          <country>ARG</country>
+          <active>1</active>
+          <model>TotalCoin_Standard_Model_Checkout</model>
+          <title>TotalCoin</title>
+          <sort_order>-1</sort_order>
+          <type_checkout>iframe</type_checkout>
+        </totalcoin_standard>
+      </payment>
+    </default>
+</config>

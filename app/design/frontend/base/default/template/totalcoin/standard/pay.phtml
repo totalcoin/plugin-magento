@@ -1,0 +1,26 @@
+<?php
+
+if ($url != '') {
+  $url = urldecode($url);
+  switch ($type_checkout) {
+    case "redirect":
+      ?>
+      <script>
+        window.location.replace("<?php echo $url; ?>");
+      </script>
+      <?php
+    break;
+    case "iframe":
+      ?>
+      <iframe src="<?php echo $url; ?>" scrolling="no" name="TC-Checkout" width="953" height="600" frameborder="0" style="overflow:hidden"></iframe>
+      <?php
+    break;
+    default:
+      $content = '<TOTALCOIN>';
+    break;
+  }
+} else {
+  echo 'Error Interno.';
+}
+
+?>
